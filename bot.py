@@ -80,6 +80,7 @@ def phrase(message):
         time.sleep(1)
         bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
+        bot.send_message(message.chat.id, "Готово!", reply_markup=markup)
     elif message.text == "Какие факультеты (направления подготовки) есть в Университете Иннополис?":
         i -= 1
         time.sleep(1)

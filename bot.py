@@ -30,19 +30,23 @@ def welcome(message):
 def phrase(message):
     i = -46
     if message.text == 'Программы обучения':
+        message1 = bot.send_message(message.chat.id, "Ищу нужную информацию...")
         time.sleep(1)
+        bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
-        bot.send_message(message.chat.id,
-                         "Наши программы обучения: \n — Бакалавриат: «Информатика и вычислительная техника» и «Анализ данных и искусственный интеллект» \n — Магистратура: «Управление разработкой программного обеспечения», «Робототехника и компьютерное зрение», «Компьютерная безопасность и сети», «Анализ данных и искусственный интеллект» и «Технологическое предпринимательство» \n — Аспирантура: «Теоретические основы информатики» и «Математическое моделирование, численные методы и комплексы программ» \n Подробнее: https://innopolis.university/about/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit")
+        bot.send_message(message.chat.id, text= "Наши программы обучения: \n — Бакалавриат: «Информатика и вычислительная техника» и «Анализ данных и искусственный интеллект» \n — Магистратура: «Управление разработкой программного обеспечения», «Робототехника и компьютерное зрение», «Компьютерная безопасность и сети», «Анализ данных и искусственный интеллект» и «Технологическое предпринимательство» \n — Аспирантура: «Теоретические основы информатики» и «Математическое моделирование, численные методы и комплексы программ» \n Подробнее: https://innopolis.university/about/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit")
         i -= 1
     elif message.text == 'Общая информация':
+        message1 = bot.send_message(chat_id=369472721, text="Ищу нужную информацию...", )
         time.sleep(1)
+        bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
-        bot.send_message(message.chat.id,
-                         "Университет расположен в городе Иннополис, в 40 км от Казани. Подробнее: https://apply.innopolis.university/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit#?lang=ru&id=12&site=s1&template=university24&landing_mode=edit \n Кампус университета состоит из нескольких корпусов. Студенты проживают в комфортабельных номерах с отдельной кухней и санузлом, оборудованных всей необходимой бытовой техникой и мебелью. На территории кампуса доступен бесплатный Wi-Fi, для студентов работают клининг-сервис и прачечная, есть столовая. Корпуса соединены между собой пешеходной галереей, которая плавно перетекает в здание университета. Большое внимание уделяется безопасности, поэтому на территории жилого комплекса действует пропускной режим. Подробнее: https://innopolis.university/campus?lang=ru&id=12&site=s1&template=university24&landing_mode=edit \n Университет Иннополис предоставляет студентам широкие возможности для самореализации. В вузе работает большое количество творческих и научных клубов, проводятся спортивные и инженерные соревнования.")
+        bot.send_message(message.chat.id, text= "Университет расположен в городе Иннополис, в 40 км от Казани. Подробнее: https://apply.innopolis.university/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit#?lang=ru&id=12&site=s1&template=university24&landing_mode=edit \n Кампус университета состоит из нескольких корпусов. Студенты проживают в комфортабельных номерах с отдельной кухней и санузлом, оборудованных всей необходимой бытовой техникой и мебелью. На территории кампуса доступен бесплатный Wi-Fi, для студентов работают клининг-сервис и прачечная, есть столовая. Корпуса соединены между собой пешеходной галереей, которая плавно перетекает в здание университета. Большое внимание уделяется безопасности, поэтому на территории жилого комплекса действует пропускной режим. Подробнее: https://innopolis.university/campus?lang=ru&id=12&site=s1&template=university24&landing_mode=edit \n Университет Иннополис предоставляет студентам широкие возможности для самореализации. В вузе работает большое количество творческих и научных клубов, проводятся спортивные и инженерные соревнования.")
         i -= 1
     elif message.text == "FAQ":
+        message1 = bot.send_message(message.chat.id,"Секунду...")
         time.sleep(1)
+        bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
         markup3 = types.ReplyKeyboardMarkup(row_width=1)
         askbutton1 = types.InlineKeyboardButton(
@@ -62,14 +66,19 @@ def phrase(message):
         bot.send_message(message.chat.id, "Вот самые часто задаваемые вопросы.",
                          reply_markup=markup3)
     elif message.text == "Мерч":
+        message1 = bot.send_message(message.chat.id, "Ищу нужную информацию...")
         i -= 1
         time.sleep(1)
-        bot.send_message(message.chat.id, "Мерч можно купить по ссылке: https://iustore.innopolis.ru/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit")
+        bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
+        bot.send_message(message.chat.id,
+                         "Мерч можно купить по ссылке: https://iustore.innopolis.ru/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit")
         i -= 1
     if message.text == "Назад":
         i -= 1
         time.sleep(1)
-        bot.send_message(message.chat.id, "Возвращаюсь назад...", reply_markup=markup)
+        message1 = bot.send_message(message.chat.id, "Возвращаюсь назад...", reply_markup=markup)
+        time.sleep(1)
+        bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
     elif message.text == "Какие факультеты (направления подготовки) есть в Университете Иннополис?":
         i -= 1

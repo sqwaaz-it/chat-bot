@@ -21,7 +21,7 @@ markup.add(button1, button2, button3, button4)
 @bot.message_handler(commands=['start'])
 def welcome(message):
     bot.send_message(message.chat.id,
-                     "Здравствуйте, {0.first_name}. \nЯ <b>{1.first_name}</b>, бот, созданный для помощи вам с поступлением в университет Innopolis!\nВы можете задать мне интересующие вас вопросы или нажать на кнопки в меню..".format(
+                     "Здравствуйте, {0.first_name}. \nЯ <b>{1.first_name}</b>, бот, созданный для помощи вам с поступлением в университет Innopolis!\nВы можете задать мне интересующие вас вопросы или нажать на кнопки в меню. Так же вы можете ввести ключевые слова (бакалавр, магистр, аспирант, грант).".format(
                          message.from_user, bot.get_me()),
                      parse_mode='html', reply_markup=markup)
 
@@ -37,7 +37,7 @@ def phrase(message):
         bot.send_message(message.chat.id, text= "Наши программы обучения: \n — Бакалавриат: «Информатика и вычислительная техника» и «Анализ данных и искусственный интеллект» \n — Магистратура: «Управление разработкой программного обеспечения», «Робототехника и компьютерное зрение», «Компьютерная безопасность и сети», «Анализ данных и искусственный интеллект» и «Технологическое предпринимательство» \n — Аспирантура: «Теоретические основы информатики» и «Математическое моделирование, численные методы и комплексы программ» \n Подробнее: https://innopolis.university/about/?lang=ru&id=12&site=s1&template=university24&landing_mode=edit")
         i -= 1
     elif message.text == 'Общая информация':
-        message1 = bot.send_message(chat_id=369472721, text="Ищу нужную информацию...", )
+        message1 = bot.send_message(chat_id=message.chat.id, text="Ищу нужную информацию...", )
         time.sleep(1)
         bot.delete_message(message_id=message1.id, chat_id=message.chat.id)
         i -= 1
@@ -167,3 +167,4 @@ def phrase(message):
 
 
 bot.polling(none_stop=True)
+# примечание: код работал через компьютер, для полноценной работы загрузите его на хостинг, пожалуйста.
